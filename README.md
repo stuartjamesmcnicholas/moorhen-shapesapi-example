@@ -4,6 +4,9 @@ It consists of a single `index.htmnl` which loads Moorhen with `<script type="im
 An example of talking to Moorhen's API is shown in `main.js`. *This project uses an alpha version of Moorhen that offers 3D shapes and a 
 consistent Vectors API. Buttons are available to load a sphere and a vector.*
 ```
+mkdir moorhen_example
+cd moorhen example
+
 npm install
 
 cp -r node_modules/moorhen/public/MoorhenAssets public/
