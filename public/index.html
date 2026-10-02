@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Moorhen page</title>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "moorhen/web-component": "./moorhen.js",
+        "moorhen/web-component/utils": "./MoorhenWebComponentUtils.js"
+      }
+    }
+    </script>
+
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 1.5rem; }
+      #status-text { font-family: ui-monospace, monospace; background: #f2f2f0;
+                      border-left: 3px solid #999; padding: 0.5rem 0.75rem; }
+      .controls { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      button:disabled { opacity: 0.45; }
+    </style>
+  </head>
+  <body>
+    <h1>Moorhen</h1>
+
+    <p id="status-text">No structure loaded yet.</p>
+
+    <!-- url-prefix is stated explicitly rather than left to its default of "MoorhenAssets".
+         The default is a bare relative path, resolved against whichever URL the bundle happens to
+         use as its base; the wasm and monomer library are not things to leave to chance, and an
+         absolute path has exactly one meaning. With the server rooted at public/, that is
+         /MoorhenAssets.
+
+         The page must also be served with COOP/COEP - SimpleCrossOriginServer.py sets both - or
+         the Coot wasm gets no SharedArrayBuffer and the worker will not start. -->
+    <moorhen-web-component id="moorhen-1" width="1100" height="550"
+                           url-prefix="/MoorhenAssets"></moorhen-web-component>
+
+    <div class="controls">
+      <button id="load-7avk">Load 7AVK (PDBe)</button>
+      <button id="center-residue-1231">Centre on residue 1231</button>
+      <button id="add-sphere">Add a sphere</button>
+      <button id="recolour-sphere">Recolour it</button>
+      <button id="add-vector">Add a vector</button>
+      <button id="clear-objects">Clear shapes</button>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
