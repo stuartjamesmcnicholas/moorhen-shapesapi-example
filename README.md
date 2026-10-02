@@ -1,7 +1,7 @@
-# This respisitory is currently broken
 ```
 npm install
 
+cp -r node_modules/moorhen/public/MoorhenAssets public/
 cp node_modules/moorhen/moorhen.js node_modules/moorhen/*.moorhen.js public/
 cp node_modules/moorhen/MoorhenWebComponentUtils.js public/
 cp node_modules/moorhen/moorhen.js.LICENSE.txt public/
